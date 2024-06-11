@@ -1,0 +1,31 @@
+﻿@using CRUDAPP.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Category>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Category category in Model)
+        {
+            
+            <tr>
+                    <td>@category.Id</td>
+                    <td>@category.Name</td>
+                    <td>@category.Description</td>
+                    <td class="m-0"><a class="btn btn-primary" asp-controller="categories" asp-action="edit" asp-route-id=@category.Id>Edit</a></td>
+                    <td><a class="btn btn-danger" asp-controller="categories" asp-action="delete" asp-route-id=@category.Id>Delete</a></td>
+                    <td><a class="btn btn-dark" asp-controller="categories" asp-action="ViewProducts" asp-route-name="@category.Name">View Products</a><td>
+                </tr>
+        } 
+    </tbody>
+</table>
+<a class="btn btn-primary mt-3" asp-controller="categories" asp-action="add">Add</a>

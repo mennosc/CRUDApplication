@@ -1,0 +1,35 @@
+﻿@using CRUDAPP.Models
+@model List<Product>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image Path</th>
+            <th scope="col">Category</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Quantity</td>
+                <td>@p.Description</td>
+                <td>@p.ImagePath</td>
+                <td>@p.Category</td>
+                <td class="m-0"><a class="btn btn-primary" asp-controller="productDashboard" asp-action="edit" asp-route-id=@p.Id>Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="productDashboard" asp-action="delete" asp-route-id=@p.Id>Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary mt-3" asp-controller="productDashboard" asp-action="add">Add</a>

@@ -1,0 +1,17 @@
+﻿@using CRUDAPP.Models
+@model List<Product>
+
+@foreach(Product product in Model)
+{
+    <div class="card mt-5" style="width: 18rem";>
+        <img src="@product.ImagePath" />
+        <div class="card-body">
+            <h5 class="card-title">@product.Name</h5>
+            <p>@product.Description</p>
+            <hr />
+            <h6>&euro;@product.Price</h6>
+            <hr />
+            <h6>Nog @product.Quantity op voorraad!</h6>
+        </div>
+    </div>
+}

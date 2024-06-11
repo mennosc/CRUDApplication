@@ -1,0 +1,28 @@
+﻿@using CRUDAPP.Models
+@model List<Product>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Quantity</td>
+                <td>@p.Description</td>
+                <td>@p.Category</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,16 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model CRUDAPP.Models.Category
+
+<form method="post" asp-controller="categories" asp-action="add">
+    <div class="container">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" asp-for="Name" />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input asp-for="Description" type="text" class="form-control" />
+        </div>
+        <input type="submit" class="btn btn-primary mt-3" value="Add" />
+    </div>
+</form>
